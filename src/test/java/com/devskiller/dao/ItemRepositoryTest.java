@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ItemRepositoryTest {
 
     @Autowired
-    private ItemRepository itemRepository;
+    private IItemRepository itemRepository;
     @Autowired
     private UserRepository userRepository;
 

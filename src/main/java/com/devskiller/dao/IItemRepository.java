@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface ItemRepository extends CrudRepository<Item, Long> {
-    @Query("select i from Item i left join i.reviews r group by i.id having coalesce(avg(r.rating), 0) < :rating")
+public interface IItemRepository extends CrudRepository<Item, Long> {
+    @Query("select i from Item i join i.reviews r group by i.id having avg(r.rating) < :rating")
     List<Item> findItemsWithAverageRatingLowerThan(@Param("rating")  Double rating);
-
 }

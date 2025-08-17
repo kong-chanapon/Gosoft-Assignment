@@ -1,6 +1,6 @@
 package com.devskiller.service;
 
-import com.devskiller.dao.ItemRepository;
+import com.devskiller.dao.IItemRepository;
 import com.devskiller.model.Item;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.mock;
 
 public class ItemServiceTest {
 
-    private ItemRepository itemRepository = mock(ItemRepository.class);
+    private IItemRepository itemRepository = mock(IItemRepository.class);
     private ItemService itemService = new ItemService(itemRepository);
 
     @Test
